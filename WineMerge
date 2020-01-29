@@ -1,0 +1,17 @@
+#!/bin/bash
+#######################################
+#   WineMerge
+#######################################
+SCRIPT_DIR=$(cd $(dirname $0);pwd)
+
+if [ ! -d wine ]
+then
+    mkdir $SCRIPT_DIR/wine
+fi
+
+docker run --rm -it \
+    --ipc host \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix/:/tmp/.X11-unix \
+    -v $SCRIPT_DIR/wine:/home/winemerge/.wine \
+    winemerge:latest
