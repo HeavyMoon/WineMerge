@@ -6,7 +6,7 @@ DockerのWine上でWinMergeを起動する．
 BUILD
 --------------------
 ```
-$ git clone
+$ git clone https://github.com/HeavyMoon/WineMerge.git
 $ cd WineMerge/
 $ docker build -t winemerge .
 ```
